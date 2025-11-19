@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>02-vite-basics</title>
+</head>
+
+<body>
+  <div id="app">
+    <div class="main">
+      <h1 class="main-h1">Uppgift 1</h1>
+      <p>Hello!</p>
+      <a href="#">Buy here!</a>
+      <form class="new-item-form">
+        <div class="field">
+          <label>Type:</label>
+          <select id="type">
+            <option value="charter">Charter</option>
+            <option value="allinclusive">All inclusive</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>To / From</label>
+          <input type="text" id="tofrom">
+        </div>
+        <div class="field">
+          <label>Price</label>
+          <input type="number" id="amount">
+        </div>
+        <div class="field">
+          <textarea placeholder="Add your comments" id="comments"></textarea>
+        </div>
+        <div class="field">
+          <label for="newsletter">I want a newsletter</label>
+          <input type="checkbox" id="newsletter" name="newsletter">
+        </div>
+        <div class="field">
+          <label>Do you need special assistance?</label>
+          <input id="yes" type="radio" name="assistance" value="yes">
+          <label for="yes">YES</label>
+          <input id="no" type="radio" name="assistance" value="no">
+          <label for="no">NO</label>
+        </div>
+        <button>Submit</button>
+      </form>
+      <section>
+        <hr>
+        <button id="color-button">Change background color to pink</button>
+        <div style="background-color:lightblue; border:1px solid black; width:250px;" id="title-changer">Change title to
+          Newest title on hover</div>
+        <label>your own text</label>
+        <input type="personalized-text" id="personalized-text">
+        <p id="output"></p>
+      </section>
+
+      <div>
+        <h2>To do app</h2>
+        <div style="display:flex;flex-direction: column;max-width: 200px;;">
+          <label for="to-do">Enter a to-do item</label>
+          <input id="to-do" type="text"></input>
+          <button id="add-to-do">Add item</button>
+          <ul id="shopping-list"></ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
