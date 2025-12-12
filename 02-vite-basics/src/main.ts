@@ -218,3 +218,67 @@ myList.push(1, "hi", true)
 // let y: Observable<Person>;
 // let z = new Observable(23)
 })
+
+//--------------------------------------------------------------------------------
+
+interface Todo {
+	id: number;
+	title: string;
+	completed: boolean;
+	deadline?: number;
+}
+
+// 🫴🏻
+export type TodoIdTitle = Pick<Todo, "id" | "title">;  // id, title
+
+// ✋🏻
+export type TodoExceptId = Omit<Todo, "id">;   // title, completed, deadline
+
+// 🏗️
+export type OptionalTodo = Partial<Todo>;
+
+// 🚔
+export type RequiredTodo = Required<Todo>;
+
+
+//--------------------------------------------------------------------------------
+//TYPEOF
+let username = "johan";
+//    ^?
+
+// Generate a type from the type of `username`
+type TypeOfUsername = typeof username;
+//    ^?
+const userGirl: TypeOfUsername = "Petra"
+console.log(userGirl)
+
+const johan = {
+	username: "johan",
+	role: "meme-lord",
+	level: 1337,
+}
+
+// Extract the type from a object
+type User = typeof johan;
+const user: User = {username: "Petra", role:"student", level: 1}
+console.log(user)
+
+type Car = {
+	manufacturer: string;
+	model: string;
+	year: number;
+}
+
+// Extract the keys of a type as a union
+type CarKeys = keyof Car; 
+
+const keys: CarKeys = "manufacturer"
+console.log(keys)// CarKeys will be of type union `"manufacturer" | "model" | "year"`
+
+//---------------------------------------------------------------------------------
+//type MixedGet = "GeT";  // 🐐
+//     ^?
+
+// type UppercaseGet = Uppercase<MixedGet>;  // "GET"
+// type LowercaseGet = Lowercase<MixedGet>;  // "get"
+// type ProperlyCapitalizedGet = Capitalize<LowercaseGet>;  // "Get"
